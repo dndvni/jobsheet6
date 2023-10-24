@@ -3,24 +3,27 @@ import java.util.Scanner;
 public class Pemilihan2Percobaan202 {
     public static void main(String[] args) {
         Scanner input02 = new Scanner(System.in);
+        float sudut1, sudut2, sudut3, totalSudut;
 
-        System.out.println("Masukkan sudut pertama segitiga");
-        int sudut1 = input02.nextInt();
+        System.out.print("Masukkan sudut 1 : ");
+        sudut1 = input02.nextFloat();
+        System.out.print("Masukkan sudut 2 : ");
+        sudut2 = input02.nextFloat();
+        System.out.print("Masukkan sudut 3 : ");
+        sudut3 = input02.nextFloat();
 
-        System.out.println("Masukkan sudut kedua segitiga");
-        int sudut2 = input02.nextInt();
-
-        System.out.println("masukkan sudut ketiga segitiga");
-        int sudut3 = input02.nextInt();
-
-        int totalSudut = sudut1 + sudut2 + sudut3;
+        totalSudut = sudut1 + sudut2 + sudut3;
 
         if (totalSudut == 180) {
             if ((sudut1 == 90) || (sudut2 == 90) || (sudut3 == 90))
-                System.out.println("Segitiga tersebut adalah segitga siku-siku");
-            else
-                System.out.println("Segitiga tersebut adalah bukan segitiga siku-siku");
-        } else
-            System.out.println("Bukan segitiga");
-            }
+                System.out.println("Segitiga tersebut adalah segitiga siku-siku");
+        } else if ((sudut1 == sudut2 && sudut1 == sudut3 && sudut2 == sudut3)) {
+            System.out.println("Segitiga tersebut adalah segitiga sama sisi");
+        } else if ((sudut1 == sudut2 || sudut1 == sudut3 || sudut2 == sudut3)) {
+            System.out.println("Segitiga tersebut adalha segitiga sama kaki");
+        }
+        else {
+            System.out.println("Bukan Segitiga");
+        }
+    }
 }
